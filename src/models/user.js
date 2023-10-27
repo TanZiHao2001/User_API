@@ -12,15 +12,6 @@ class User{
         this.refreshToken = refreshToken;
     }
 
-    //static method to create a newly registered user
-    // static async createNewUser(email, organisation){
-    //     let id = 0;
-    //     const username = email.split("@")[0];
-    //     const [result] = await db.execute('INSERT INTO user (username, email, organisation) VALUES (?, ?, ?)', [username, email, organisation]);
-    //     id = result.insertId;
-    //     return new User(id, username, email, organisation)
-    // }
-
     // Static method to find a user by ID
     static async findById(id) {
         const [users] = await db.execute('SELECT * FROM user WHERE id = ?', [id]);
@@ -48,4 +39,14 @@ class User{
     }
 }
 
+
 module.exports = User;
+
+//static method to create a newly registered user
+    // static async createNewUser(email, organisation){
+    //     let id = 0;
+    //     const username = email.split("@")[0];
+    //     const [result] = await db.execute('INSERT INTO user (username, email, organisation) VALUES (?, ?, ?)', [username, email, organisation]);
+    //     id = result.insertId;
+    //     return new User(id, username, email, organisation)
+    // }
